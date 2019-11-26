@@ -8,50 +8,16 @@
     <link rel='stylesheet' href='style.css' />
 
 </head>
+
 <body>
-    
 
-<script>
+  <audio id="clearsound" src="sound/pop.ogg" preload="auto"></audio>
+  <canvas width='300' height='600'></canvas>
+  <button id="playbutton" onclick="playButtonClicked();">Play</button>
 
-// phina.js をグローバル領域に展開
-phina.globalize();
-
-// MainScene クラスを定義
-phina.define('MainScene', {
-  superClass: 'CanvasScene',
-  init: function() {
-    this.superInit();
-    // 背景色を指定
-    this.backgroundColor = '#444';
-    // ラベルを生成
-    this.rect=RectangleShape({
-      width:450,
-      height:800,
-      padding:200,
-      backgroundColor:"white",
-      fill:"grey",
-      // stroke:"black",
-      strokeWidth:4,
-      // shadow:"red",
-      // shadowBlur:100,
-      cornerRadius:0
-}).addChildTo(this).setPosition(this.gridX.center(),this.gridY.center());
-
-  },
-});
-
-// メイン処理
-phina.main(function() {
-  // アプリケーション生成
-  var app = GameApp({
-    startLabel: 'main', // メインシーンから開始する
-  });
-  // アプリケーション実行
-  app.run();
-});
-
-
-</script>
+  <script src='js/tetris.js'></script>
+  <script src='js/render.js'></script>
+  
 
 </body>
 </html>
